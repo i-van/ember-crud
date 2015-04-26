@@ -19,6 +19,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "validation": "git+https://github.com/i-van/node-validation.git",
+    "body-parser": "^1.12.3",
     "broccoli-asset-rev": "^2.0.2",
     "connect-restreamer": "^1.0.2",
     "ember-cli": "0.2.3",
