@@ -1,0 +1,7 @@
+<label class="col-sm-3 control-label">{{label}}</label>
+<div class="col-sm-9">
+    {{input placeholder=placeholder value=value class="form-control"}}
+    {{#each error in errors}}
+        <span class="help-block">{{error}}</span>
+    {{/each}}
+</div>
