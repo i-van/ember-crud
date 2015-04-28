@@ -14,8 +14,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
-                {{list-link title='List of Users' route='users.index'}}
-                {{list-link title='New User' route='users.new'}}
+                {{#link-to 'users.index' tagName='li'}}
+                    {{link-to 'List of Users' 'users.index'}}
+                {{/link-to}}
+                {{#link-to 'users.new' tagName='li'}}
+                    {{link-to 'New User' 'users.new'}}
+                {{/link-to}}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
