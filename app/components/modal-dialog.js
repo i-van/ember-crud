@@ -7,5 +7,10 @@ export default Ember.Component.extend({
       .on('hidden.bs.modal', () => {
         this.sendAction('close');
       });
+  },
+  actions: {
+    primaryAction: function() {
+      this.sendAction('primaryAction');
+    }
   }
 });
