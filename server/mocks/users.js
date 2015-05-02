@@ -29,7 +29,7 @@ module.exports = function(app) {
       if (err) {
         return next(err);
       } else if (errors.length) {
-        return res.json(400, mapErrors(errors));
+        return res.json(422, mapErrors(errors));
       }
 
       var user = {
