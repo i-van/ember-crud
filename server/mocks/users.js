@@ -25,7 +25,8 @@ module.exports = function(app) {
       return item.id;
     }));
 
-    (new UserValidation(req.body)).validate(function(err, errors) {
+    var data = req.body.user;
+    (new UserValidation(data)).validate(function(err, errors) {
       if (err) {
         return next(err);
       } else if (errors.length) {
@@ -34,15 +35,15 @@ module.exports = function(app) {
 
       var user = {
         id: nextId,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        login: req.body.login,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        login: data.login,
         created: new Date(),
         updated: new Date()
       };
       store.push(user);
-      res.json(201, user);
+      res.json(201, { user: user });
     });
   });
 
