@@ -55,11 +55,25 @@ module.exports = function(app) {
     });
   });
 
-  router.put('/:id', function(req, res) {
-    res.send({
-      'users': {
-        id: req.params.id
+  router.put('/:id', function(req, res, next) {
+    var data = req.body.user;
+    (new UserValidation(data)).validate(function(err, errors) {
+      if (err) {
+        return next(err);
+      } else if (errors.length) {
+        return res.json(422, mapErrors(errors));
       }
+
+      var user = store.filter(function(item) {
+        return item.id == req.params.id;
+      })[0];
+      user.firstName = data.firstName;
+      user.lastName = data.lastName;
+      user.email = data.email;
+      user.login = data.login;
+      user.updated = new Date();
+
+      res.json({ user: user });
     });
   });
 
