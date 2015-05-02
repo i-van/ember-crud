@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   },
   actions: {
     primaryAction: function() {
-      this.sendAction('primaryAction');
+      this.sendAction('primaryAction', this);
     }
   }
 });
