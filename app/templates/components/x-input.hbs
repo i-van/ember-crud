@@ -1,0 +1,7 @@
+<label class="col-sm-3 control-label" {{bind-attr for=inputId}}>{{label}}</label>
+<div class="col-sm-9">
+    {{input id=inputId value=value placeholder=placeholder class="form-control"}}
+    {{#each error in errors}}
+        <span class="help-block">{{error.message}}</span>
+    {{/each}}
+</div>
