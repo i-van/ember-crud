@@ -5,7 +5,12 @@ function leadingZero(number) {
 }
 
 export function formattedDate(date) {
-  date = new Date(date || Date.now());
+  // clone date to prevent modification
+  date = new Date(date);
+  if (isNaN(date)) {
+    return '';
+  }
+
   return date.getFullYear() + '-'
        + leadingZero(date.getMonth() + 1) + '-'
        + leadingZero(date.getDate()) + ' '

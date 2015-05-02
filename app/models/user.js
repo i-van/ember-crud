@@ -8,14 +8,6 @@ export default DS.Model.extend({
   }.property('firstName', 'lastName'),
   email: DS.attr('string'),
   login: DS.attr('string'),
-  created: DS.attr('date', {
-    defaultValue: function () {
-      return new Date();
-    }
-  }),
-  updated: DS.attr('date', {
-    defaultValue: function () {
-      return new Date();
-    }
-  })
+  created: DS.attr('date'),
+  updated: DS.attr('date')
 });
