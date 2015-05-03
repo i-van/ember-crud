@@ -78,6 +78,16 @@ module.exports = function(app) {
   });
 
   router.delete('/:id', function(req, res) {
+    var index = -1;
+    store.forEach(function(user, i) {
+      if (user.id == req.params.id) {
+        index = i;
+      }
+    });
+    if (index !== -1) {
+      store.splice(index, 1);
+    }
+
     res.status(204).end();
   });
 
