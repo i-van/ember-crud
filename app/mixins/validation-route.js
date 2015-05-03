@@ -13,7 +13,7 @@ export default Ember.Mixin.create({
     save: function(modal) {
       this.currentModel.save()
         .then(() => {
-          modal.$().modal('hide');
+          modal.hide();
           this.transitionTo(this.redirectTo);
         });
     }

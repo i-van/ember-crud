@@ -8,6 +8,9 @@ export default Ember.Component.extend({
         this.sendAction('close');
       });
   },
+  hide: function() {
+    this.$().modal('hide');
+  },
   actions: {
     primaryAction: function() {
       this.sendAction('primaryAction', this);
