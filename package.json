@@ -20,8 +20,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "validation": "git+https://github.com/i-van/node-validation.git",
     "body-parser": "^1.12.3",
+    "bower": "^1.4.1",
     "broccoli-asset-rev": "^2.0.2",
     "connect-restreamer": "^1.0.2",
     "ember-cli": "0.2.3",
@@ -38,6 +38,7 @@
     "ember-export-application-global": "^1.0.2",
     "express": "^4.12.3",
     "glob": "^4.5.3",
-    "morgan": "^1.5.2"
+    "morgan": "^1.5.2",
+    "validation": "git+https://github.com/i-van/node-validation.git"
   }
 }
