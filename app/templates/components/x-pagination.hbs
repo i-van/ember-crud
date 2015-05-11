@@ -1,0 +1,5 @@
+{{#each item in pages}}
+    <li {{bind-attr class="item.className"}}>
+        <a href="#" {{action 'goPage' item.page}}>{{{item.label}}}</a>
+    </li>
+{{/each}}
