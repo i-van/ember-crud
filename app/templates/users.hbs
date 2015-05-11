@@ -35,5 +35,6 @@
     {{/each}}
     </tbody>
 </table>
+{{x-pagination itemsPerPage=limit currentPage=page totalItems=model.meta.total}}
 
 {{outlet}}
